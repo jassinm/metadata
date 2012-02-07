@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='metadata',
-    version='0.1.1',
+    version='0.2',
     description='Metadata for Humans',
     long_description="""Metadata extract metadatas from files.""",
     author='Timothée Peignier',
