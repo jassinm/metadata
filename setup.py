@@ -7,9 +7,9 @@ setup(
     version='0.2',
     description='Metadata for Humans',
     long_description="""Metadata extract metadatas from files.""",
-    author='Timothée Peignier',
-    author_email='timothee.peignier@tryphon.org',
-    url='https://github.com/cyberdelia/metadata',
+    author='Timothée Peignier, Locojay',
+    author_email='locojaydev@gmail.com',
+    url='https://github.com/locojay/metadata',
     packages=find_packages(),
     install_requires=[
         'hachoir-core==1.3.3',
@@ -18,6 +18,7 @@ setup(
     ],
     zip_safe=False,
     include_package_data=True,
+    scripts=['metadata_extract']
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

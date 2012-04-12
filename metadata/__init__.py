@@ -14,11 +14,14 @@ class MetadataException(Exception):
 
 class Metadata(dict):
     def __init__(self, file):
-        data = dict([
-            (data.key, data.values[0].value)
-            for data in self.extract_metadata(file)
-            if data.values
-        ])
+        m_extract = self.extract_metadata(file)
+        data = {}
+        if m_extract:
+            data = dict([
+                (data.key, data.values[0].value)
+                for data in m_extract
+                if data.values
+            ])
         super(Metadata, self).__init__(data)
 
     def extract_metadata(self, file):
@@ -27,7 +30,8 @@ class Metadata(dict):
             filename = file.name
             if not isinstance(filename, unicode):
                 filename = unicodeFilename(filename)
-            stream = InputIOStream(file, source="file:%s" % filename, tags=[], filename=filename)
+            stream = InputIOStream(file, source="file:%s" % filename, tags=[],
+                    filename=filename)
             parser = guessParser(stream)
             return extractMetadata(parser)
         except (HachoirError, TypeError) as e:
