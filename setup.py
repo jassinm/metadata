@@ -18,7 +18,7 @@ setup(
     ],
     zip_safe=False,
     include_package_data=True,
-    scripts=['metadata_extract']
+    scripts=['metadata_extract'],
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
